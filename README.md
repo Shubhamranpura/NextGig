@@ -1,12 +1,37 @@
-# React + Vite
+# nextGig 🎯
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**nextGig** is a simple job search application built using React and Tailwind CSS. It allows users to browse remote job listings, search and filter them, view job details, and submit job applications — all on the frontend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Features
 
-## Expanding the ESLint configuration
+- 🔍 Search for jobs by keyword
+- 🌍 Filter by:
+  - Location
+  - Job Type
+  - Date Posted
+- 🌗 Light and Dark mode support
+- 📄 View full job details
+- 📝 Apply for jobs with a form (Name, Email, Phone, Resume)
+- 📎 Resume upload (PDF only, max 5MB)
+- ✅ Form validation with proper error messages
+- 📬 Confirmation message after submission
+- 💾 Applications stored in local state (no backend)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 How to Run the App
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/your-username/nextGig.git
+cd nextGig 
+```
+2. **Install dependencies**
+
+``` bash 
+  npm install
+```
+3. **Start the development server**
