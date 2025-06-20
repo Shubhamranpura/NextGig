@@ -9,7 +9,7 @@ const SearchBar = ({searchItem,setSearchItem }) => {
         value={searchItem}
         onChange={(e)=>setSearchItem(e.target.value)}
         placeholder="Search job title or category"
-        className="w-full text-[20px] font-semibold bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
+        className="w-full text-[17px] sm:text-[17px] md:text-[20px] lg:text-[18px] font-semibold bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
       />
     </div>
   );

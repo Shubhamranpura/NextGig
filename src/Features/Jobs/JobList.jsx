@@ -4,7 +4,7 @@ import { PiBuildingOffice } from 'react-icons/pi';
 import Pagination from '../../Componants/Common/Pagination';
 import { useNavigate } from 'react-router-dom';
 
-function JobList({ location, jobType, searchItem, publishedTime, jobData }) {
+function JobList({ location, jobType, searchItem, publishedTime, jobData, loading }) {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [debouncedResult, setDebouncedResult] = useState(searchItem);
   const [page, setPage] = useState(1);
@@ -52,9 +52,34 @@ function JobList({ location, jobType, searchItem, publishedTime, jobData }) {
     navigate(`/job/${job.id}`, { state: job });
   };
 
+  if (loading) {
+    return (
+      <h1 className='font-figtree text-center text-2xl font-semibold'>
+        Loading ...
+      </h1>
+    );
+  }
+
+  if (!jobData || jobData.length === 0) {
+    return (
+      <h1 className='font-figtree text-center text-md font-semibold'>
+        No Jobs Available
+      </h1>
+    );
+  }
+
+  if (filteredJobs.length === 0) {
+    return (
+      <h1 className="font-figtree text-center text-md font-semibold">
+        No Jobs Found ...
+      </h1>
+    );
+  }
+
+
   return (
     <div className="px-4 sm:px-6 lg:px-4 py-4">
-      {filteredJobs.length > 0 ? (
+      {filteredJobs.length > 0 && (
         <section>
           <p className="text-lg font-semibold mb-4">{filteredJobs.length} Job Results</p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -80,7 +105,7 @@ function JobList({ location, jobType, searchItem, publishedTime, jobData }) {
                   • {job.timeAgo}
                 </p>
 
-                {job.tags.length > 0 && (
+                {job.tags.length >= 1 && (
                   <div className="flex flex-wrap gap-2 mt-3">
                     {job.tags.map((tag, index) => (
                       <span
@@ -97,14 +122,11 @@ function JobList({ location, jobType, searchItem, publishedTime, jobData }) {
                   Salary : {job.salary || "Not Mentioned"}
                 </p>
 
-                
               </li>
             ))}
           </ul>
 
         </section>
-      ) : (
-        <p className="text-center text-gray-500 py-6 animate-pulse~~">Loading ...</p>
       )}
       <Pagination
         filteredJobs={filteredJobs}

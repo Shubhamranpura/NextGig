@@ -12,7 +12,7 @@ const JobSearch = () => {
   // useJobData();
 
   const theme = useSelector((state) => state.theam.mode);
-  const { jobData } = useJobData()
+  const { jobData , loading } = useJobData()
 
 
   const [selectedLocation, setSelectedLocation] = useState({ value: '', label: 'All Locations' });
@@ -58,7 +58,7 @@ const JobSearch = () => {
     <section className={`min-h-screen ${theme === 'dark' ? 'dark' : ''}`}>
       <div className="dark:bg-gray-800 dark:text-white bg-white text-black p-4">
         <p
-          className="m-2 w-[30%] text-lg font-semibold font-figtree hover:underline text-red-700 dark:text-red-400 cursor-pointer"
+          className="m-2 w-[50%] lg:w-[10%] text-lg font-semibold font-figtree hover:underline text-red-700 dark:text-red-400 cursor-pointer"
           onClick={handleRefresh}
         >
           Clear All Filter
@@ -96,7 +96,7 @@ const JobSearch = () => {
         </div>
       </div>
 
-      <JobList location={location} jobType={jobType} searchItem={searchItem} publishedTime={publishedTime}  jobData={jobData} />
+      <JobList location={location} jobType={jobType} searchItem={searchItem} publishedTime={publishedTime} loading={loading}  jobData={jobData} />
 
     </section>
   );

@@ -26,7 +26,7 @@ function Pagination({ filteredJobs, jobsPerPage, page, setPage }) {
           <button
             key={i}
             onClick={() => setPage(i + 1)}
-            className={`px-4 py-2 min-w-[40px] text-sm rounded-lg transition font-medium ${
+            className={`px-4 py-2 min-w-[40px] text-sm rounded-lg transition font-medium text-center sm:text-center ${
               page === i + 1
                 ? 'bg-indigo-600 text-white'
                 : 'bg-gray-200 hover:bg-indigo-400 hover:text-white dark:bg-gray-700 dark:text-white dark:hover:bg-indigo-500'
