@@ -68,13 +68,7 @@ function JobList({ location, jobType, searchItem, publishedTime, jobData, loadin
     );
   }
 
-  if (filteredJobs.length === 0) {
-    return (
-      <h1 className="font-figtree text-center text-md font-semibold">
-        No Jobs Found ...
-      </h1>
-    );
-  }
+ 
 
 
   return (
