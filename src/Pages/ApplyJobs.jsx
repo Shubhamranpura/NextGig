@@ -29,10 +29,10 @@ function ApplyJobForm() {
     }
 
     if (formData.resume) {
-      const isPDF = formData.resume.type === 'application/pdf';
+      const isPdf = formData.resume.type === 'application/pdf';
       const isSizeValid = formData.resume.size <= 5 * 1024 * 1024;
 
-      if (!isPDF) {
+      if (!isPdf) {
         newErrors.resume = errorsMessage.fileError
       } else if (!isSizeValid) {
         newErrors.resume = errorsMessage.fileSizeError;
