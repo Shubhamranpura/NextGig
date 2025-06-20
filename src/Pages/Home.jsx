@@ -6,7 +6,7 @@ function Home() {
   const theme = useSelector((state) => state.theam.mode);
 
   return (
-    <div className={`${theme === "dark" ? "dark" : ""}`}>
+    <div >
       <div className="w-full bg-[#f5f7fa]  text-black dark:bg-black dark:text-white">
         <section className="font-figtree overflow-hidden">
           <header className="mx-auto flex flex-col-reverse md:flex-row justify-between gap-x-2">

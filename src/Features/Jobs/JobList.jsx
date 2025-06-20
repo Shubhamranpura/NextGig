@@ -104,7 +104,7 @@ function JobList({ location, jobType, searchItem, publishedTime, jobData }) {
 
         </section>
       ) : (
-        <p className="text-center text-gray-500 py-6">No jobs found.</p>
+        <p className="text-center text-gray-500 py-6 animate-pulse~~">Loading ...</p>
       )}
       <Pagination
         filteredJobs={filteredJobs}
