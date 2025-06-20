@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import HeaderImg from "../assets/HeaderImg.jpg";
+import HeaderImg from "../assets/headerImg.jpg";
 import JobSearch from "../Features/Jobs/JobSearch";
 
 function Home() {
